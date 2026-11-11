@@ -1,0 +1,623 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<title>Brasmak Refrigeração | Assistência técnica em Vitória da Conquista</title>
+<meta name="description" content="Assistência técnica especializada em refrigeração e eletrodomésticos em Vitória da Conquista. Conserto de geladeiras, freezers, lavadoras, tanquinhos, microondas, bebedouros e ar-condicionado automotivo.">
+<meta name="keywords" content="refrigeração, conserto de geladeira, assistência técnica, Vitória da Conquista, Brasmak, manutenção de eletrodomésticos, ar-condicionado automotivo">
+<meta name="author" content="Brasmak Refrigeração">
+<meta name="robots" content="index, follow">
+<meta name="theme-color" content="#03060b">
+<link rel="canonical" href="https://brasmakrefrigeracao.com.br/">
+<meta property="og:type" content="website">
+<meta property="og:locale" content="pt_BR">
+<meta property="og:site_name" content="Brasmak Refrigeração">
+<meta property="og:title" content="Brasmak Refrigeração | Assistência técnica em Vitória da Conquista">
+<meta property="og:description" content="Conserto de geladeiras, freezers, lavadoras, microondas, bebedouros e ar-condicionado automotivo. Orçamento sem compromisso pelo WhatsApp.">
+<meta property="og:url" content="https://brasmakrefrigeracao.com.br/">
+<meta property="og:image" content="https://brasmakrefrigeracao.com.br/uploads/og-image.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="Brasmak Refrigeração: conserto de eletrodomésticos em Vitória da Conquista.">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Brasmak Refrigeração | Assistência técnica em Vitória da Conquista">
+<meta name="twitter:description" content="Conserto de geladeiras, freezers, lavadoras, microondas, bebedouros e ar-condicionado automotivo.">
+<meta name="twitter:image" content="https://brasmakrefrigeracao.com.br/uploads/og-image.jpg">
+<link rel="preload" as="script" href="https://cdn.jsdelivr.net/npm/three@0.147.0/build/three.min.js" crossorigin="anonymous">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Michroma&family=Instrument+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap">
+<style>
+:root{padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+body{margin:0} img{max-width:100%} [hidden]{display:none!important}
+/* Layout: a fixed WebGL stage behind tall scroll "scenes" with sticky copy on the left (bottom on phones),
+   followed by conventional commercial sections over a translucent deep-blue ground. Single dark look by design. */
+:root{
+  --abyss:#03060b;
+  --deep:#06121f;
+  --navy:#0b223b;
+  --ice:#a9d8ff;
+  --crystal:#eef7ff;
+  --steel:#8fa0b3;
+  --signal:#4cbcff;
+  --ember:#ff9d5c;
+  --text:#e6eef7;
+  --muted:#98aabd;
+  --line:rgba(169,216,255,.16);
+  --line-strong:rgba(169,216,255,.32);
+  --glass:rgba(6,18,31,.62);
+  --wa:#25d366;
+  --f-display:"Michroma","Eurostile","Arial Black",system-ui,sans-serif;
+  --f-body:"Instrument Sans","Segoe UI",system-ui,-apple-system,sans-serif;
+  --f-mono:"IBM Plex Mono",ui-monospace,"SFMono-Regular",Menlo,monospace;
+  --gutter:max(16px,env(safe-area-inset-left,0px));
+  --gutter-r:max(16px,env(safe-area-inset-right,0px));
+  --scene-k:1;
+  color-scheme:dark;
+}
+*{box-sizing:border-box}
+html{background:var(--abyss);scroll-behavior:auto}
+body{background:var(--abyss);color:var(--text);font-family:var(--f-body);font-size:16px;line-height:1.6;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset-top,0px);z-index:60;background:var(--abyss)}
+a{color:inherit}
+:focus-visible{outline:2px solid var(--signal);outline-offset:3px;border-radius:6px}
+.sr-only{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0}
+.skip{position:fixed;left:16px;top:-60px;z-index:100;background:var(--crystal);color:var(--abyss);padding:10px 16px;border-radius:8px;font-weight:600;text-decoration:none}
+.skip:focus{top:calc(12px + env(safe-area-inset-top,0px))}
+
+/* ---------- WebGL stage ---------- */
+#gl{position:fixed;inset:0;width:100%;height:100%;display:block;z-index:0;pointer-events:none;background:var(--abyss)}
+.no3d #gl{display:none}
+
+/* ---------- Loader (real progress) ---------- */
+#loader{position:fixed;inset:0;z-index:90;display:grid;place-items:center;background:var(--abyss);transition:opacity .9s ease,visibility .9s}
+#loader.done{opacity:0;visibility:hidden}
+.loader-in{display:grid;gap:18px;justify-items:center;width:min(320px,80vw)}
+.loader-bar{width:100%;height:2px;background:var(--line);overflow:hidden;border-radius:2px}
+.loader-bar i{display:block;height:100%;width:0;background:linear-gradient(90deg,var(--ice),var(--signal));transition:width .35s ease}
+.loader-step{font-family:var(--f-mono);font-size:12px;letter-spacing:.08em;color:var(--muted);text-transform:uppercase;min-height:1.6em;text-align:center}
+
+/* ---------- Brand ---------- */
+.brand{display:inline-flex;align-items:center;gap:10px;text-decoration:none}
+.brand svg{width:26px;height:26px;flex:none}
+.brand b{font-family:var(--f-display);font-weight:400;font-size:15px;letter-spacing:.18em}
+.brand small{display:block;font-family:var(--f-mono);font-size:9.5px;letter-spacing:.32em;color:var(--muted);margin-top:2px}
+.brand span{line-height:1}
+
+/* ---------- Header ---------- */
+.site-head{position:fixed;top:env(safe-area-inset-top,0px);left:0;right:0;z-index:50;display:flex;align-items:center;gap:20px;padding-block:14px;padding-left:max(20px,env(safe-area-inset-left,0px));padding-right:max(20px,env(safe-area-inset-right,0px));background:linear-gradient(180deg,rgba(3,6,11,.82),rgba(3,6,11,0));}
+.site-head nav{display:flex;gap:4px;margin-left:auto;margin-right:8px}
+.site-head nav a{font-size:13px;letter-spacing:.06em;text-decoration:none;color:var(--muted);padding:8px 12px;border-radius:999px;transition:color .25s,background .25s}
+.site-head nav a:hover{color:var(--crystal);background:rgba(169,216,255,.08)}
+.head-actions{display:flex;gap:8px;align-items:center}
+.icon-btn{appearance:none;border:1px solid var(--line);background:rgba(6,18,31,.5);color:var(--text);height:38px;padding:0 12px;border-radius:999px;display:inline-flex;align-items:center;gap:8px;font:500 12px/1 var(--f-body);letter-spacing:.06em;cursor:pointer;transition:border-color .25s,background .25s}
+.icon-btn:hover{border-color:var(--line-strong);background:rgba(11,34,59,.7)}
+.icon-btn svg{width:16px;height:16px}
+.icon-btn[aria-pressed="true"]{border-color:var(--signal);color:var(--crystal)}
+.eq{display:inline-flex;gap:2px;align-items:flex-end;height:12px}
+.eq i{width:2px;background:currentColor;height:3px;border-radius:1px;transition:height .2s}
+[aria-pressed="true"] .eq i{animation:eq 1.1s ease-in-out infinite}
+[aria-pressed="true"] .eq i:nth-child(2){animation-delay:.2s}
+[aria-pressed="true"] .eq i:nth-child(3){animation-delay:.45s}
+@keyframes eq{0%,100%{height:3px}50%{height:12px}}
+
+/* ---------- Buttons ---------- */
+.btn{--tx:0px;--ty:0px;position:relative;display:inline-flex;align-items:center;justify-content:center;gap:10px;min-height:48px;padding:0 24px;border-radius:999px;font:600 12.5px/1 var(--f-body);letter-spacing:.14em;text-transform:uppercase;text-decoration:none;cursor:pointer;border:1px solid transparent;transform:translate(var(--tx),var(--ty));transition:transform .35s cubic-bezier(.2,.8,.2,1),box-shadow .35s,background .35s,border-color .35s,color .35s;white-space:nowrap}
+.btn--primary{background:linear-gradient(180deg,#f3f9ff,#c9e5fb);color:#04121f;box-shadow:0 1px 0 rgba(255,255,255,.7) inset,0 10px 30px -10px rgba(76,188,255,.55),0 2px 0 #8fbfe3}
+.btn--primary:hover{box-shadow:0 1px 0 rgba(255,255,255,.7) inset,0 18px 40px -12px rgba(76,188,255,.75),0 3px 0 #8fbfe3}
+.btn--ghost{background:rgba(6,18,31,.45);color:var(--crystal);border-color:var(--line-strong);backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px)}
+.btn--ghost:hover{border-color:var(--ice);background:rgba(11,34,59,.65)}
+.btn--wa{background:linear-gradient(180deg,#2fe07a,#1fb85e);color:#03200f;box-shadow:0 10px 30px -12px rgba(37,211,102,.6),0 2px 0 #138a45}
+.btn svg{width:18px;height:18px;flex:none}
+.btn--sm{min-height:38px;padding:0 16px;font-size:11px}
+.actions{display:flex;flex-wrap:wrap;gap:12px}
+
+/* ---------- Cinematic scenes ---------- */
+.scene{overflow-x:clip;position:relative;height:calc(var(--len) * var(--scene-k) * 1vh);z-index:2}
+.stage{position:sticky;top:0;height:100vh;height:100svh;display:flex;align-items:center;padding-left:var(--gutter);padding-right:var(--gutter-r);padding-block:96px 48px;pointer-events:none}
+.stage > *{pointer-events:auto}
+.copy{max-width:min(520px,44vw);display:grid;gap:18px;margin-left:clamp(0px,4vw,72px);position:relative}
+.copy::before{content:"";position:absolute;inset:-60px -80px -60px -120px;background:radial-gradient(closest-side,rgba(3,6,11,.62),rgba(3,6,11,0));z-index:-1;pointer-events:none}
+.eyebrow{font-family:var(--f-mono);font-size:12px;letter-spacing:.22em;text-transform:uppercase;color:var(--ice);margin:0;display:flex;align-items:center;gap:10px}
+.eyebrow::before{content:"";width:22px;height:1px;background:currentColor;opacity:.7}
+h1,h2,h3{margin:0;font-weight:400;text-wrap:balance}
+h1,.h-display{font-family:var(--f-display);text-transform:uppercase;letter-spacing:.02em;line-height:1.14}
+h1{font-size:clamp(1.65rem,3.6vw,3.35rem)}
+.scene h2{font-family:var(--f-display);text-transform:uppercase;font-size:clamp(1.35rem,2.6vw,2.4rem);line-height:1.16;letter-spacing:.02em}
+.lede{font-size:clamp(1rem,1.25vw,1.15rem);color:#c9d7e5;margin:0;max-width:44ch}
+.copy p{margin:0}
+.chips{display:flex;flex-wrap:wrap;gap:8px;margin:0;padding:0;list-style:none}
+.chips li{font-family:var(--f-mono);font-size:11.5px;letter-spacing:.06em;color:var(--crystal);border:1px solid var(--line-strong);border-radius:999px;padding:5px 11px;background:rgba(6,18,31,.4)}
+.beats{position:relative;min-height:4.8em}
+.beat{font-size:15px;color:#cfdbe8;max-width:40ch;border-left:1px solid var(--line-strong);padding-left:14px;transition:opacity .4s ease,transform .4s ease}
+.js .beats .beat{position:absolute;left:0;top:0;opacity:0;transform:translateY(8px)}
+.js .beats .beat.on{opacity:1;transform:none}
+.beat strong{font-family:var(--f-mono);font-weight:500;color:var(--crystal)}
+.scene-cta{display:flex;gap:10px;flex-wrap:wrap}
+.copy--center{margin-inline:auto;text-align:center;justify-items:center;max-width:min(640px,92vw)}
+.copy--center .eyebrow::before{display:none}
+.scroll-cue{position:absolute;left:50%;bottom:28px;transform:translateX(-50%);font-family:var(--f-mono);font-size:11px;letter-spacing:.3em;text-transform:uppercase;color:var(--muted);display:grid;justify-items:center;gap:10px}
+.scroll-cue i{width:1px;height:42px;background:linear-gradient(var(--ice),transparent);animation:cue 2.4s ease-in-out infinite;transform-origin:top}
+@keyframes cue{0%{transform:scaleY(0)}45%{transform:scaleY(1)}100%{transform:scaleY(1);opacity:0}}
+
+/* ---------- HUD: thermometer + chapters ---------- */
+.hud-temp{position:fixed;z-index:40;left:max(20px,env(safe-area-inset-left,0px));bottom:calc(22px + env(safe-area-inset-bottom,0px));display:flex;align-items:flex-end;gap:14px;pointer-events:none;transition:opacity .6s}
+.hud-temp .val{font-family:var(--f-mono);font-weight:500;font-size:clamp(28px,3.4vw,44px);line-height:1;font-variant-numeric:tabular-nums;letter-spacing:-.02em;color:var(--t-color,var(--ember));transition:color .4s}
+.hud-temp .val sup{font-size:.42em;vertical-align:top;margin-left:2px;letter-spacing:0}
+.hud-temp .scale{display:grid;gap:4px;padding-bottom:4px}
+.hud-temp .bar{position:relative;width:120px;height:3px;border-radius:3px;background:linear-gradient(90deg,#57b7ff,#a9d8ff 45%,#ffd2a8 80%,#ff9d5c)}
+.hud-temp .bar i{position:absolute;top:50%;width:9px;height:9px;border-radius:50%;background:var(--crystal);box-shadow:0 0 12px var(--ice);transform:translate(-50%,-50%);left:var(--t-pos,100%)}
+.hud-temp .lbl{font-family:var(--f-mono);font-size:10.5px;letter-spacing:.14em;color:var(--muted);text-transform:uppercase;display:flex;justify-content:space-between;width:120px}
+.hud-temp .ctx{font-family:var(--f-mono);font-size:10.5px;letter-spacing:.16em;text-transform:uppercase;color:var(--ice);max-width:180px}
+.hud-hidden{opacity:0}
+.chapters{position:fixed;z-index:40;right:max(18px,env(safe-area-inset-right,0px));top:50%;transform:translateY(-50%);display:grid;gap:4px;transition:opacity .5s}
+.chapters a{display:flex;align-items:center;justify-content:flex-end;gap:10px;text-decoration:none;padding:5px 0;color:var(--muted)}
+.chapters a span{font-family:var(--f-mono);font-size:10.5px;letter-spacing:.16em;text-transform:uppercase;opacity:0;transform:translateX(6px);transition:opacity .3s,transform .3s}
+.chapters a i{width:6px;height:6px;border-radius:50%;border:1px solid var(--line-strong);transition:all .35s}
+.chapters a:hover span,.chapters a:focus-visible span,.chapters a.on span{opacity:1;transform:none}
+.chapters a.on{color:var(--crystal)}
+.chapters a.on i{background:var(--crystal);border-color:var(--crystal);box-shadow:0 0 10px var(--ice);height:18px;border-radius:4px}
+.progress{position:fixed;z-index:55;left:0;right:0;top:env(safe-area-inset-top,0px);height:2px;pointer-events:none}
+.progress i{display:block;height:100%;width:100%;transform-origin:left;transform:scaleX(var(--p,0));background:linear-gradient(90deg,var(--signal),var(--crystal))}
+
+/* ---------- Floating WhatsApp ---------- */
+.wa-float{position:fixed;z-index:45;right:calc(20px + env(safe-area-inset-right,0px));bottom:calc(20px + env(safe-area-inset-bottom,0px));display:inline-flex;align-items:center;gap:10px;height:54px;padding:0 20px 0 16px;border-radius:999px;text-decoration:none;color:#04170c;background:linear-gradient(180deg,#34e584,#1fb85e);box-shadow:0 14px 34px -12px rgba(37,211,102,.7),0 2px 0 #138a45,0 0 0 1px rgba(255,255,255,.15) inset;font:600 13px/1 var(--f-body);letter-spacing:.04em;transition:transform .3s,box-shadow .3s}
+.wa-float:hover{transform:translateY(-2px);box-shadow:0 20px 40px -12px rgba(37,211,102,.85),0 3px 0 #138a45}
+.wa-float svg{width:24px;height:24px}
+.wa-float .pulse{position:absolute;inset:0;border-radius:inherit;box-shadow:0 0 0 0 rgba(37,211,102,.55);animation:pulse 3.2s ease-out infinite;pointer-events:none}
+@keyframes pulse{0%{box-shadow:0 0 0 0 rgba(37,211,102,.5)}70%,100%{box-shadow:0 0 0 18px rgba(37,211,102,0)}}
+
+/* ---------- Cursor ---------- */
+#cursor{position:fixed;left:0;top:0;width:34px;height:34px;margin:-17px 0 0 -17px;border:1px solid rgba(169,216,255,.55);border-radius:50%;z-index:80;pointer-events:none;transition:width .3s,height .3s,margin .3s,border-color .3s,background .3s,opacity .3s;opacity:0;mix-blend-mode:screen}
+#cursor.on{opacity:1}
+#cursor.hover{width:58px;height:58px;margin:-29px 0 0 -29px;border-color:var(--crystal);background:rgba(169,216,255,.07)}
+
+/* ---------- Commercial content ---------- */
+.content{overflow-x:clip;position:relative;z-index:3;background:linear-gradient(180deg,rgba(3,6,11,0) 0,rgba(4,11,20,.88) 22vh,rgba(4,11,20,.94) 100%)}
+.band{padding-left:var(--gutter);padding-right:var(--gutter-r);padding-block:clamp(72px,11vw,140px)}
+.wrap{max-width:1180px;margin-inline:auto}
+.sec-head{display:grid;gap:16px;max-width:760px;margin-bottom:clamp(36px,5vw,60px)}
+.sec-head h2,.content h2{font-family:var(--f-display);text-transform:uppercase;font-size:clamp(1.4rem,2.7vw,2.35rem);line-height:1.18;letter-spacing:.02em}
+.sec-head p{color:#c3d1df;max-width:62ch;margin:0}
+.services{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:1px;background:var(--line);border:1px solid var(--line);border-radius:18px;overflow:hidden}
+.svc{background:rgba(5,14,25,.92);padding:30px 28px 28px;display:grid;gap:12px;align-content:start;min-width:0;position:relative;transition:background .4s}
+.svc:hover{background:rgba(9,26,44,.95)}
+.svc .num{font-family:var(--f-mono);font-size:11px;color:var(--steel);letter-spacing:.14em;text-transform:uppercase}
+.svc h3{font-family:var(--f-body);font-weight:600;font-size:19px;letter-spacing:.01em;color:var(--crystal)}
+.svc p{margin:0;color:#b9c8d7;font-size:15px}
+.svc a.more{margin-top:6px;font-size:13px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;color:var(--ice);text-decoration:none;display:inline-flex;gap:8px;align-items:center}
+.svc a.more:hover{color:var(--crystal)}
+.svc .ico{width:38px;height:38px;color:var(--ice)}
+.steps{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:24px;counter-reset:s;list-style:none;margin:0;padding:0}
+.steps li{display:grid;gap:10px;align-content:start;padding-top:22px;border-top:1px solid var(--line-strong);min-width:0}
+.steps .n{font-family:var(--f-mono);font-size:12px;color:var(--ice);letter-spacing:.14em}
+.steps h3{font-size:18px;font-weight:600;color:var(--crystal)}
+.steps p{margin:0;color:#b9c8d7;font-size:15px}
+.about{display:grid;grid-template-columns:minmax(0,1.15fr) minmax(0,1fr);gap:clamp(32px,6vw,90px);align-items:start}
+.about p{color:#c3d1df;margin:0 0 16px;max-width:60ch}
+.facts{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:1px;background:var(--line);border:1px solid var(--line);border-radius:18px;overflow:hidden;margin:0}
+.facts div{background:rgba(5,14,25,.92);padding:22px;display:grid;gap:4px;min-width:0}
+.facts dt{font-family:var(--f-mono);font-size:24px;color:var(--crystal);letter-spacing:-.01em;font-variant-numeric:tabular-nums}
+.facts dd{margin:0;color:var(--muted);font-size:14px}
+.faq{display:grid;gap:0;border-top:1px solid var(--line)}
+.faq details{border-bottom:1px solid var(--line)}
+.faq summary{cursor:pointer;list-style:none;display:flex;justify-content:space-between;gap:20px;align-items:center;padding:22px 4px;font-weight:600;font-size:17px;color:var(--crystal)}
+.faq summary::-webkit-details-marker{display:none}
+.faq summary::after{content:"+";font-family:var(--f-mono);font-weight:400;font-size:22px;color:var(--ice);transition:transform .3s}
+.faq details[open] summary::after{transform:rotate(45deg)}
+.faq details p{margin:0;padding:0 4px 22px;color:#c3d1df;max-width:70ch}
+.contact{display:grid;grid-template-columns:minmax(0,1.2fr) minmax(0,1fr);gap:clamp(28px,5vw,64px)}
+.contact-card{border:1px solid var(--line-strong);border-radius:20px;padding:clamp(24px,3vw,36px);background:radial-gradient(120% 140% at 0% 0%,rgba(76,188,255,.14),rgba(5,14,25,.92) 55%);display:grid;gap:18px;align-content:start}
+.contact-card h3{font-family:var(--f-display);text-transform:uppercase;font-size:20px;letter-spacing:.03em}
+.contact-card .big{font-family:var(--f-mono);font-size:clamp(22px,2.6vw,30px);color:var(--crystal);user-select:all}
+.contact-list{display:grid;gap:22px;margin:0}
+.contact-list div{display:grid;gap:4px;padding-bottom:20px;border-bottom:1px solid var(--line)}
+.contact-list dt{font-family:var(--f-mono);font-size:11px;letter-spacing:.18em;text-transform:uppercase;color:var(--muted)}
+.contact-list dd{margin:0;color:var(--crystal);font-size:16px}
+.contact-list a{color:var(--ice)}
+.hours{display:grid;grid-template-columns:auto 1fr;gap:4px 18px;font-variant-numeric:tabular-nums}
+.copy-btn{appearance:none;border:1px solid var(--line-strong);background:transparent;color:var(--ice);border-radius:999px;padding:4px 10px;font:500 11px/1.4 var(--f-mono);letter-spacing:.08em;cursor:pointer;margin-left:8px;vertical-align:middle}
+
+/* ---------- Footer ---------- */
+.site-foot{position:relative;z-index:3;background:radial-gradient(120% 100% at 50% 0%,#0d2c4d 0%,#071a2e 45%,#040d18 100%);padding-left:var(--gutter);padding-right:var(--gutter-r);padding-block:clamp(70px,10vw,120px) calc(110px + env(safe-area-inset-bottom,0px));overflow:hidden}
+.site-foot canvas{position:absolute;inset:0;width:100%;height:100%;pointer-events:none;opacity:.8}
+.foot-in{position:relative;max-width:1180px;margin-inline:auto;display:grid;gap:clamp(40px,6vw,72px)}
+.foot-title{font-family:var(--f-display);text-transform:uppercase;font-size:clamp(1.6rem,4.4vw,3.6rem);line-height:1.1;letter-spacing:.02em;margin:0}
+.foot-title span{display:block;color:var(--ice);font-size:.42em;letter-spacing:.14em;margin-top:14px}
+.foot-grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:28px}
+.foot-grid h3{font-family:var(--f-mono);font-size:11px;letter-spacing:.2em;text-transform:uppercase;color:var(--muted);margin-bottom:12px;font-weight:500}
+.foot-grid p,.foot-grid li{margin:0;color:#c9d7e5;font-size:15px}
+.foot-grid ul{list-style:none;margin:0;padding:0;display:grid;gap:6px}
+.foot-grid a{text-decoration:none;color:#c9d7e5}
+.foot-grid a:hover{color:var(--crystal)}
+.legal{display:flex;flex-wrap:wrap;justify-content:space-between;gap:12px;border-top:1px solid var(--line);padding-top:24px;font-size:13px;color:var(--muted)}
+
+/* ---------- Fallback (no WebGL / no JS) ---------- */
+.no3d .scene{height:auto}
+.no3d .stage{position:relative;height:auto;min-height:88vh;padding-block:120px 80px}
+.no3d .scene[data-scene="0"] .stage{background:radial-gradient(70% 70% at 70% 50%,rgba(76,188,255,.22),transparent 70%),radial-gradient(60% 60% at 20% 80%,rgba(255,157,92,.12),transparent 70%)}
+.no3d .scene:nth-of-type(odd) .stage{background:radial-gradient(60% 70% at 75% 50%,rgba(76,188,255,.14),transparent 70%)}
+.no3d .scene:nth-of-type(even) .stage{background:radial-gradient(60% 70% at 75% 50%,rgba(169,216,255,.1),transparent 70%)}
+.no3d .beats{min-height:0;display:grid;gap:10px}
+.no3d .beats .beat{position:relative;opacity:1;transform:none}
+.no3d .scene-ice{display:none}
+.no3d .hud-temp,.no3d .chapters{display:none}
+
+/* ---------- Responsive ---------- */
+@media (max-width:1080px){
+  .services{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .steps{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .foot-grid{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .site-head nav{display:none}
+  .head-actions{margin-left:auto}
+}
+@media (max-width:760px){
+  :root{--scene-k:.78}
+  .stage{align-items:flex-end;padding-block:80px calc(100px + env(safe-area-inset-bottom,0px))}
+  .copy{max-width:100%;margin-left:0;gap:14px}
+  .copy::before{inset:-50px -16px -40px -16px;background:linear-gradient(180deg,rgba(3,6,11,0),rgba(3,6,11,.78) 38%,rgba(3,6,11,.9))}
+  .copy--hero{gap:14px}
+  .scene h2{font-size:clamp(1.15rem,5.4vw,1.6rem)}
+  h1{font-size:clamp(1.35rem,6.6vw,2rem)}
+  .lede{font-size:15px}
+  .beats{min-height:6.2em}
+  .beat{font-size:14px}
+  .chapters{display:none}
+  .hud-temp{top:calc(70px + env(safe-area-inset-top,0px));bottom:auto;left:max(16px,env(safe-area-inset-left,0px))}
+  .hud-temp .val{font-size:26px}
+  .hud-temp .bar,.hud-temp .lbl{width:84px}
+  .hud-temp .ctx{display:none}
+  .services,.steps,.about,.contact,.facts,.foot-grid{grid-template-columns:minmax(0,1fr)}
+  .wa-float{padding:0;width:56px;justify-content:center}
+  .wa-float .lbl{display:none}
+  .btn{min-height:46px;padding:0 18px;font-size:11.5px}
+  .head-actions .btn{display:none}
+  .scroll-cue{display:none}
+  .brand b{font-size:13px}
+}
+@media (pointer:coarse){#cursor{display:none}}
+@media (prefers-reduced-motion:reduce){
+  *,*::before,*::after{animation-duration:.01ms!important;animation-iteration-count:1!important;transition-duration:.01ms!important}
+}
+
+</style>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "LocalBusiness", "name": "Brasmak Refrigeração", "description": "Assistência técnica especializada em refrigeração e eletrodomésticos em Vitória da Conquista: geladeiras, freezers, lavadoras, tanquinhos, micro-ondas, bebedouros e ar-condicionado automotivo.", "url": "https://brasmakrefrigeracao.com.br/", "image": "https://brasmakrefrigeracao.com.br/uploads/og-image.jpg", "logo": "https://brasmakrefrigeracao.com.br/uploads/logo-ice.webp", "telephone": "+55-77-3427-3008", "email": "contato@brasmakrefrigeracao.com.br", "address": {"@type": "PostalAddress", "streetAddress": "R. Gérson Sáles, 191, São Vicente", "addressLocality": "Vitória da Conquista", "addressRegion": "BA", "postalCode": "45000-145", "addressCountry": "BR"}, "areaServed": "Vitória da Conquista e região", "openingHoursSpecification": [{"@type": "OpeningHoursSpecification", "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"], "opens": "08:00", "closes": "12:00"}, {"@type": "OpeningHoursSpecification", "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"], "opens": "14:00", "closes": "18:00"}, {"@type": "OpeningHoursSpecification", "dayOfWeek": "Saturday", "opens": "08:00", "closes": "12:00"}]}</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "Vocês consertam todos os tipos de geladeiras?", "acceptedAnswer": {"@type": "Answer", "text": "Sim. Fazemos manutenção em todos os modelos, incluindo Frost Free, Inverter, duplex e side-by-side."}}, {"@type": "Question", "name": "Atendem em domicílio?", "acceptedAnswer": {"@type": "Answer", "text": "Sim. Oferecemos atendimento técnico em domicílio em Vitória da Conquista e região."}}, {"@type": "Question", "name": "O orçamento é cobrado?", "acceptedAnswer": {"@type": "Answer", "text": "Não. Você pode solicitar um orçamento sem compromisso pelo WhatsApp ou telefone."}}, {"@type": "Question", "name": "Os serviços têm garantia?", "acceptedAnswer": {"@type": "Answer", "text": "Sim. Todos os serviços têm garantia, e usamos peças originais nos reparos."}}, {"@type": "Question", "name": "Qual o horário de atendimento?", "acceptedAnswer": {"@type": "Answer", "text": "De segunda a sexta, das 8h às 12h e das 14h às 18h. Aos sábados, das 8h às 12h."}}]}</script>
+</head>
+<body>
+<a class="skip" href="#conteudo">Pular para o conteúdo</a>
+<canvas id="gl" aria-hidden="true"></canvas>
+
+<div id="loader" role="status" aria-live="polite">
+  <div class="loader-in">
+    <a class="brand" href="#inicio" tabindex="-1" aria-hidden="true">
+      <svg viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"><path d="M16 2v28M3.9 9l24.2 14M3.9 23 28.1 9"/><path d="m12.5 4.5 3.5 3 3.5-3M12.5 27.5l3.5-3 3.5 3M5 14.6l4.4-1.6-.8-4.6M27 17.4l-4.4 1.6.8 4.6M5 17.4 9.4 19l-.8 4.6M27 14.6 22.6 13l.8-4.6" opacity=".75"/></svg>
+      <span><b>BRASMAK</b><small>REFRIGERAÇÃO</small></span>
+    </a>
+    <div class="loader-bar"><i id="loader-fill"></i></div>
+    <p class="loader-step" id="loader-step">Preparando a experiência</p>
+  </div>
+</div>
+
+<div class="progress" aria-hidden="true"><i id="progress"></i></div>
+
+<header class="site-head">
+  <a class="brand" href="#inicio" aria-label="Brasmak Refrigeração, início">
+    <svg viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" aria-hidden="true"><path d="M16 2v28M3.9 9l24.2 14M3.9 23 28.1 9"/><path d="m12.5 4.5 3.5 3 3.5-3M12.5 27.5l3.5-3 3.5 3M5 14.6l4.4-1.6-.8-4.6M27 17.4l-4.4 1.6.8 4.6M5 17.4 9.4 19l-.8 4.6M27 14.6 22.6 13l.8-4.6" opacity=".75"/></svg>
+    <span><b>BRASMAK</b><small>REFRIGERAÇÃO</small></span>
+  </a>
+  <nav aria-label="Principal">
+    <a href="#geladeira">Experiência</a>
+    <a href="#servicos">Serviços</a>
+    <a href="#como-funciona">Como funciona</a>
+    <a href="#sobre">Sobre</a>
+    <a href="#duvidas">Dúvidas</a>
+    <a href="#contato">Contato</a>
+  </nav>
+  <div class="head-actions">
+    <button class="icon-btn" id="sound" type="button" aria-pressed="false" aria-label="Ativar som ambiente">
+      <span class="eq" aria-hidden="true"><i></i><i></i><i></i></span><span id="sound-lbl">Som</span>
+    </button>
+    <a class="btn btn--primary btn--sm" data-wa="orcamento" href="https://api.whatsapp.com/send/?phone=5577988671946&amp;text=Ol%C3%A1!%20Gostaria%20de%20solicitar%20um%20or%C3%A7amento%2C%20por%20favor." target="_blank" rel="noopener">Solicitar orçamento</a>
+  </div>
+</header>
+
+<div class="hud-temp" id="hud-temp" aria-hidden="true">
+  <div class="val" id="hud-val">26<sup>°C</sup></div>
+  <div class="scale">
+    <div class="ctx" id="hud-ctx">Cozinha numa tarde comum</div>
+    <div class="bar"><i></i></div>
+    <div class="lbl"><span>−18</span><span>26</span></div>
+  </div>
+</div>
+
+<nav class="chapters" id="chapters" aria-label="Capítulos da experiência">
+  <a href="#inicio" data-ch="0"><span>Início</span><i></i></a>
+  <a href="#geladeira" data-ch="1"><span>Geladeira</span><i></i></a>
+  <a href="#freezer" data-ch="2"><span>Freezer</span><i></i></a>
+  <a href="#lavadoras" data-ch="4"><span>Lavadora</span><i></i></a>
+  <a href="#bebedouros" data-ch="5"><span>Bebedouro</span><i></i></a>
+  <a href="#microondas" data-ch="6"><span>Micro-ondas</span><i></i></a>
+  <a href="#tanquinhos" data-ch="7"><span>Tanquinho</span><i></i></a>
+  <a href="#ar-automotivo" data-ch="8"><span>Ar automotivo</span><i></i></a>
+  <a href="#servicos" data-ch="9"><span>Serviços</span><i></i></a>
+</nav>
+
+<main id="conteudo">
+  <section class="scene" id="inicio" data-scene="0" style="--len:170" aria-labelledby="h-inicio">
+    <div class="stage">
+      <div class="copy copy--hero">
+        <p class="eyebrow">Vitória da Conquista · Bahia · Há mais de 15 anos</p>
+        <h1 id="h-inicio">O controle da temperatura começa aqui.</h1>
+        <p class="lede">Especialistas em refrigeração e manutenção de eletrodomésticos em Vitória da Conquista e região.</p>
+        <div class="actions">
+          <a class="btn btn--primary" href="#geladeira" data-jump="1">Conheça nossa experiência</a>
+          <a class="btn btn--ghost" data-wa="orcamento" href="https://api.whatsapp.com/send/?phone=5577988671946&amp;text=Ol%C3%A1!%20Gostaria%20de%20solicitar%20um%20or%C3%A7amento%2C%20por%20favor." target="_blank" rel="noopener">Solicitar orçamento</a>
+        </div>
+      </div>
+      <div class="scroll-cue" aria-hidden="true">Role para resfriar<i></i></div>
+    </div>
+  </section>
+
+  <section class="scene" id="geladeira" data-scene="1" style="--len:420" aria-labelledby="h-geladeira">
+    <div class="stage">
+      <div class="copy">
+        <p class="eyebrow">Geladeiras</p>
+        <h2 id="h-geladeira">Cada porta guarda um sistema inteiro.</h2>
+        <p class="lede">Fazemos manutenção em todos os modelos de geladeira, com diagnóstico preciso e soluções eficientes.</p>
+        <ul class="chips" aria-label="Modelos atendidos"><li>Frost Free</li><li>Inverter</li><li>Duplex</li><li>Side-by-side</li></ul>
+        <div class="beats">
+          <p class="beat" data-in="0" data-out=".3"><strong>26 °C</strong> é a temperatura de uma cozinha em Conquista numa tarde comum.</p>
+          <p class="beat" data-in=".3" data-out=".62">As portas se abrem, a luz interna acende e o ar frio começa a descer.</p>
+          <p class="beat" data-in=".62" data-out="1.01"><strong>4 °C.</strong> Geladeira no ponto: entre 3 e 5 °C, alimento conservado.</p>
+        </div>
+        <div class="scene-cta"><a class="btn btn--ghost btn--sm" data-wa="assistencia" data-item="minha geladeira" href="https://api.whatsapp.com/send/?phone=5577988671946" target="_blank" rel="noopener">Preciso de assistência</a></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="scene" id="freezer" data-scene="2" style="--len:320" aria-labelledby="h-freezer">
+    <div class="stage">
+      <div class="copy">
+        <p class="eyebrow">Freezers</p>
+        <h2 id="h-freezer">Quando o frio precisa ser levado ao extremo.</h2>
+        <div class="beats">
+          <p class="beat" data-in="0" data-out=".45">A tampa abre e uma corrente de ar frio escorre pela borda.</p>
+          <p class="beat" data-in=".45" data-out="1.01"><strong>−18 °C.</strong> Freezer funcionando. Se o seu não chega lá, é com a gente.</p>
+        </div>
+        <div class="scene-cta"><a class="btn btn--ghost btn--sm" data-wa="assistencia" data-item="meu freezer" href="https://api.whatsapp.com/send/?phone=5577988671946" target="_blank" rel="noopener">Falar com um especialista</a></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="scene scene-ice" id="gelo" data-scene="3" style="--len:170" aria-label="Transição">
+    <div class="stage">
+      <div class="copy copy--center">
+        <p class="eyebrow">Geladeiras e freezers de todas as marcas</p>
+        <p class="lede">Do Frost Free ao side-by-side, com peças originais e garantia em todos os serviços.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="scene" id="lavadoras" data-scene="4" style="--len:340" aria-labelledby="h-lavadoras">
+    <div class="stage">
+      <div class="copy">
+        <p class="eyebrow">Lavadoras</p>
+        <h2 id="h-lavadoras">Desempenho, cuidado e precisão em cada ciclo.</h2>
+        <p class="lede">Reparo e manutenção de máquinas de lavar com técnicos especializados e peças originais.</p>
+        <div class="beats">
+          <p class="beat" data-in="0" data-out=".45">A porta abre e o tambor de aço aparece por inteiro.</p>
+          <p class="beat" data-in=".45" data-out="1.01">Porta fechada, água entrando, tambor girando no ritmo certo.</p>
+        </div>
+        <div class="scene-cta"><a class="btn btn--ghost btn--sm" data-wa="assistencia" data-item="minha máquina de lavar" href="https://api.whatsapp.com/send/?phone=5577988671946" target="_blank" rel="noopener">Preciso de assistência</a></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="scene" id="bebedouros" data-scene="5" style="--len:280" aria-labelledby="h-bebedouros">
+    <div class="stage">
+      <div class="copy">
+        <p class="eyebrow">Bebedouros</p>
+        <h2 id="h-bebedouros">Água gelada. Qualidade em cada detalhe.</h2>
+        <p class="lede">Limpeza, higienização e conserto de bebedouros residenciais e comerciais, com água limpa e gelada.</p>
+        <div class="scene-cta"><a class="btn btn--ghost btn--sm" data-wa="assistencia" data-item="meu bebedouro" href="https://api.whatsapp.com/send/?phone=5577988671946" target="_blank" rel="noopener">Solicitar orçamento</a></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="scene" id="microondas" data-scene="6" style="--len:220" aria-labelledby="h-microondas">
+    <div class="stage">
+      <div class="copy">
+        <p class="eyebrow">Micro-ondas</p>
+        <h2 id="h-microondas">Diagnóstico rápido. Prato girando outra vez.</h2>
+        <p class="lede">Conserto de micro-ondas com diagnóstico rápido e serviço de qualidade para o seu aparelho voltar a funcionar.</p>
+        <div class="scene-cta"><a class="btn btn--ghost btn--sm" data-wa="assistencia" data-item="meu micro-ondas" href="https://api.whatsapp.com/send/?phone=5577988671946" target="_blank" rel="noopener">Preciso de assistência</a></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="scene" id="tanquinhos" data-scene="7" style="--len:220" aria-labelledby="h-tanquinhos">
+    <div class="stage">
+      <div class="copy">
+        <p class="eyebrow">Tanquinhos</p>
+        <h2 id="h-tanquinhos">O agitador de volta ao trabalho.</h2>
+        <p class="lede">Reparo e manutenção de lavadoras e tanquinhos com técnicos especializados e peças originais.</p>
+        <div class="scene-cta"><a class="btn btn--ghost btn--sm" data-wa="assistencia" data-item="meu tanquinho" href="https://api.whatsapp.com/send/?phone=5577988671946" target="_blank" rel="noopener">Preciso de assistência</a></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="scene" id="ar-automotivo" data-scene="8" style="--len:240" aria-labelledby="h-auto">
+    <div class="stage">
+      <div class="copy">
+        <p class="eyebrow">Ar-condicionado automotivo</p>
+        <h2 id="h-auto">O ar do seu carro voltando a gelar.</h2>
+        <p class="lede">Manutenção e recarga de gás para o ar-condicionado do seu carro voltar a gelar.</p>
+        <div class="scene-cta"><a class="btn btn--ghost btn--sm" data-wa="assistencia" data-item="o ar-condicionado do meu carro" href="https://api.whatsapp.com/send/?phone=5577988671946" target="_blank" rel="noopener">Falar com um especialista</a></div>
+      </div>
+    </div>
+  </section>
+
+  <div class="content" id="comercial">
+    <section class="band" id="servicos" aria-labelledby="h-servicos">
+      <div class="wrap">
+        <div class="sec-head">
+          <p class="eyebrow">Serviços</p>
+          <h2 id="h-servicos">O que consertamos</h2>
+          <p>Manutenção e conserto de equipamentos de refrigeração e eletrodomésticos de todas as marcas, com diagnóstico preciso.</p>
+        </div>
+        <div class="services">
+          <article class="svc">
+            <svg class="ico" viewBox="0 0 40 40" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><rect x="10" y="4" width="20" height="32" rx="2.5"/><path d="M10 15h20M14 8v4M14 19v6"/></svg>
+            <h3>Geladeiras e freezers</h3>
+            <p>Todos os modelos: Frost Free, Inverter, duplex e side-by-side. Diagnóstico preciso e soluções eficientes.</p>
+            <a class="more" data-wa="assistencia" data-item="minha geladeira" href="https://api.whatsapp.com/send/?phone=5577988671946" target="_blank" rel="noopener">Chamar no WhatsApp →</a>
+          </article>
+          <article class="svc">
+            <svg class="ico" viewBox="0 0 40 40" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><rect x="7" y="4" width="26" height="32" rx="2.5"/><circle cx="20" cy="22" r="8"/><path d="M7 10h26M12 7h4"/><path d="M15 24c2.5-2 7.5 2 10 0" opacity=".7"/></svg>
+            <h3>Lavadoras e tanquinhos</h3>
+            <p>Reparo e manutenção de máquinas de lavar com técnicos especializados e peças originais.</p>
+            <a class="more" data-wa="assistencia" data-item="minha máquina de lavar" href="https://api.whatsapp.com/send/?phone=5577988671946" target="_blank" rel="noopener">Chamar no WhatsApp →</a>
+          </article>
+          <article class="svc">
+            <svg class="ico" viewBox="0 0 40 40" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><rect x="3" y="9" width="34" height="22" rx="2.5"/><rect x="7" y="13" width="20" height="14" rx="1.5"/><path d="M31 14v2M31 20v2M31 26v1"/></svg>
+            <h3>Micro-ondas</h3>
+            <p>Diagnóstico rápido e serviço de qualidade para o seu aparelho voltar a funcionar.</p>
+            <a class="more" data-wa="assistencia" data-item="meu micro-ondas" href="https://api.whatsapp.com/send/?phone=5577988671946" target="_blank" rel="noopener">Chamar no WhatsApp →</a>
+          </article>
+          <article class="svc">
+            <svg class="ico" viewBox="0 0 40 40" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><circle cx="20" cy="20" r="14"/><circle cx="20" cy="20" r="2.5"/><path d="M20 17.5c0-5 1-8 4-9M22.2 21.2c4.3 2.5 6.4 4.8 5.6 7.9M17.8 21.2c-4.3 2.5-7.4 3.1-9.6.9"/></svg>
+            <h3>Ar-condicionado automotivo</h3>
+            <p>Manutenção e recarga de gás para o ar do seu carro voltar a gelar.</p>
+            <a class="more" data-wa="assistencia" data-item="o ar-condicionado do meu carro" href="https://api.whatsapp.com/send/?phone=5577988671946" target="_blank" rel="noopener">Chamar no WhatsApp →</a>
+          </article>
+          <article class="svc">
+            <svg class="ico" viewBox="0 0 40 40" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M20 5c-6 8-9 13-9 18a9 9 0 0 0 18 0c0-5-3-10-9-18z"/><path d="M15.5 24a4.5 4.5 0 0 0 4.5 4.5" opacity=".7"/></svg>
+            <h3>Bebedouros</h3>
+            <p>Limpeza, higienização e conserto de bebedouros residenciais e comerciais, com água limpa e gelada.</p>
+            <a class="more" data-wa="assistencia" data-item="meu bebedouro" href="https://api.whatsapp.com/send/?phone=5577988671946" target="_blank" rel="noopener">Chamar no WhatsApp →</a>
+          </article>
+          <article class="svc">
+            <svg class="ico" viewBox="0 0 40 40" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><circle cx="20" cy="20" r="14"/><path d="M15.5 16a4.5 4.5 0 1 1 6.4 4.1c-1.2.6-1.9 1.4-1.9 2.7V24"/><circle cx="20" cy="28.5" r=".6" fill="currentColor"/></svg>
+            <h3>Outro aparelho?</h3>
+            <p>Mande a marca e o modelo e a gente diz se consegue ajudar.</p>
+            <a class="more" data-wa="outro" href="https://api.whatsapp.com/send/?phone=5577988671946" target="_blank" rel="noopener">Perguntar pelo WhatsApp →</a>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="band" id="como-funciona" aria-labelledby="h-como">
+      <div class="wrap">
+        <div class="sec-head">
+          <p class="eyebrow">Como funciona</p>
+          <h2 id="h-como">Do chamado ao aparelho gelando</h2>
+        </div>
+        <ol class="steps">
+          <li><span class="n">01</span><h3>Você chama</h3><p>Pelo WhatsApp, telefone ou direto na loja. Conte o que está acontecendo com o aparelho.</p></li>
+          <li><span class="n">02</span><h3>Diagnóstico</h3><p>Um técnico avalia o defeito, na sua casa em Vitória da Conquista e região ou na nossa oficina.</p></li>
+          <li><span class="n">03</span><h3>Orçamento</h3><p>Você recebe o valor antes de qualquer serviço. O orçamento é sem compromisso.</p></li>
+          <li><span class="n">04</span><h3>Conserto com garantia</h3><p>Reparo com peças originais e garantia em todos os serviços realizados.</p></li>
+        </ol>
+        <div class="actions" style="margin-top:44px">
+          <a class="btn btn--wa" data-wa="orcamento" href="https://api.whatsapp.com/send/?phone=5577988671946&amp;text=Ol%C3%A1!%20Gostaria%20de%20solicitar%20um%20or%C3%A7amento%2C%20por%20favor." target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round" aria-hidden="true"><path d="M12 3a9 9 0 0 0-7.7 13.6L3 21l4.5-1.2A9 9 0 1 0 12 3z"/><path d="M9 8.5c0 3.6 2.9 6.5 6.5 6.5l.9-1.6-2-1-1 1a4 4 0 0 1-2.3-2.3l1-1-1-2z" stroke-width="1.3"/></svg>Solicitar orçamento</a>
+        </div>
+      </div>
+    </section>
+
+    <section class="band" id="sobre" aria-labelledby="h-sobre">
+      <div class="wrap about">
+        <div>
+          <p class="eyebrow">Conheça a Brasmak</p>
+          <h2 id="h-sobre" style="margin:16px 0 24px">Tecnologia e experiência para cuidar dos seus eletrodomésticos.</h2>
+          <p>Somos especializados em manutenção e conserto de equipamentos de refrigeração e eletrodomésticos em Vitória da Conquista e região. Com 15 anos de experiência, nossa equipe de técnicos qualificados trabalha com todas as marcas e modelos, usando peças originais.</p>
+          <p>O atendimento acontece em domicílio, em Vitória da Conquista e região, ou na nossa oficina na Rua Gérson Sáles.</p>
+          <div class="actions" style="margin-top:28px">
+            <a class="btn btn--primary" data-wa="especialista" href="https://api.whatsapp.com/send/?phone=5577988671946" target="_blank" rel="noopener">Falar com um especialista</a>
+          </div>
+        </div>
+        <dl class="facts">
+          <div><dt>15 anos</dt><dd>de experiência no mercado</dd></div>
+          <div><dt>Todas</dt><dd>as marcas e modelos</dd></div>
+          <div><dt>Garantia</dt><dd>em todos os serviços</dd></div>
+          <div><dt>Sem custo</dt><dd>orçamento sem compromisso</dd></div>
+          <div><dt>Originais</dt><dd>peças originais nos reparos</dd></div>
+          <div><dt>Domicílio</dt><dd>Vitória da Conquista e região</dd></div>
+        </dl>
+      </div>
+    </section>
+
+    <section class="band" id="duvidas" aria-labelledby="h-duvidas">
+      <div class="wrap">
+        <div class="sec-head">
+          <p class="eyebrow">Dúvidas frequentes</p>
+          <h2 id="h-duvidas">Perguntas que recebemos todo dia</h2>
+          <p>Não achou sua resposta? Fale com a gente pelo WhatsApp ou pelo telefone (77) 3427-3008.</p>
+        </div>
+        <div class="faq">
+          <details><summary>Vocês consertam todos os tipos de geladeiras?</summary><p>Sim. Fazemos manutenção em todos os modelos, incluindo Frost Free, Inverter, duplex e side-by-side.</p></details>
+          <details><summary>Atendem em domicílio?</summary><p>Sim. Oferecemos atendimento técnico em domicílio em Vitória da Conquista e região.</p></details>
+          <details><summary>O orçamento é cobrado?</summary><p>Não. Você pode solicitar um orçamento sem compromisso pelo WhatsApp ou telefone.</p></details>
+          <details><summary>Os serviços têm garantia?</summary><p>Sim. Todos os serviços têm garantia, e usamos peças originais nos reparos.</p></details>
+          <details><summary>Qual o horário de atendimento?</summary><p>De segunda a sexta, das 8h às 12h e das 14h às 18h. Aos sábados, das 8h às 12h.</p></details>
+        </div>
+      </div>
+    </section>
+
+    <section class="band" id="contato" aria-labelledby="h-contato">
+      <div class="wrap">
+        <div class="sec-head">
+          <p class="eyebrow">Contato</p>
+          <h2 id="h-contato">Precisa de assistência técnica?</h2>
+          <p>Entre em contato agora mesmo e solicite um orçamento sem compromisso.</p>
+        </div>
+        <div class="contact">
+          <div class="contact-card">
+            <h3>Orçamento pelo WhatsApp</h3>
+            <p style="margin:0;color:#c3d1df">A forma mais rápida de falar com a gente. Mande o modelo do aparelho e o que está acontecendo.</p>
+            <p class="big" style="margin:0">(77) 98867-1946</p>
+            <div class="actions">
+              <a class="btn btn--wa" data-wa="orcamento" href="https://api.whatsapp.com/send/?phone=5577988671946&amp;text=Ol%C3%A1!%20Gostaria%20de%20solicitar%20um%20or%C3%A7amento%2C%20por%20favor." target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round" aria-hidden="true"><path d="M12 3a9 9 0 0 0-7.7 13.6L3 21l4.5-1.2A9 9 0 1 0 12 3z"/><path d="M9 8.5c0 3.6 2.9 6.5 6.5 6.5l.9-1.6-2-1-1 1a4 4 0 0 1-2.3-2.3l1-1-1-2z" stroke-width="1.3"/></svg>Chamar no WhatsApp</a>
+              <a class="btn btn--ghost" data-wa="assistencia" href="https://api.whatsapp.com/send/?phone=5577988671946" target="_blank" rel="noopener">Preciso de assistência</a>
+            </div>
+          </div>
+          <dl class="contact-list">
+            <div><dt>Telefone</dt><dd><a href="tel:+557734273008">(77) 3427-3008</a><button class="copy-btn" type="button" data-copy="(77) 3427-3008">Copiar</button></dd></div>
+            <div><dt>Horário</dt><dd class="hours"><span>Seg. a sex.</span><span>8h às 12h · 14h às 18h</span><span>Sábado</span><span>8h às 12h</span><span>Domingo</span><span>Fechado</span></dd></div>
+            <div><dt>Endereço</dt><dd>R. Gérson Sáles, 191, São Vicente<br>Vitória da Conquista, BA · 45000-145<br><a href="https://www.google.com/maps/search/?api=1&amp;query=R.+G%C3%A9rson+S%C3%A1les%2C+191+-+S%C3%A3o+Vicente%2C+Vit%C3%B3ria+da+Conquista+-+BA%2C+45000-145" target="_blank" rel="noopener">Ver no Google Maps</a></dd></div>
+            <div><dt>E-mail</dt><dd>contato@brasmakrefrigeracao.com.br</dd></div>
+          </dl>
+        </div>
+      </div>
+    </section>
+  </div>
+</main>
+
+<footer class="site-foot" id="rodape">
+  <canvas id="foot-snow" aria-hidden="true"></canvas>
+  <div class="foot-in">
+    <p class="foot-title">Brasmak Refrigeração.<span>Seu conforto é nossa especialidade.</span></p>
+    <div class="foot-grid">
+      <div><h3>WhatsApp</h3><p><a data-wa="orcamento" href="https://api.whatsapp.com/send/?phone=5577988671946&amp;text=Ol%C3%A1!%20Gostaria%20de%20solicitar%20um%20or%C3%A7amento%2C%20por%20favor." target="_blank" rel="noopener">(77) 98867-1946</a></p><h3 style="margin-top:20px">Telefone</h3><p>(77) 3427-3008</p></div>
+      <div><h3>Endereço</h3><p>R. Gérson Sáles, 191, São Vicente<br>Vitória da Conquista, BA<br>45000-145</p></div>
+      <div><h3>Horário</h3><p>Seg. a sex.: 8h às 12h e 14h às 18h<br>Sábado: 8h às 12h<br>Domingo: fechado</p></div>
+      <div><h3>Navegação</h3><ul><li><a href="#servicos">Serviços</a></li><li><a href="#como-funciona">Como funciona</a></li><li><a href="#sobre">Sobre</a></li><li><a href="#duvidas">Dúvidas</a></li><li><a href="#contato">Contato</a></li><li><a href="#inicio">Voltar ao início</a></li></ul></div>
+    </div>
+    <div class="legal"><span>© 2026 Brasmak Refrigeração. Todos os direitos reservados.</span><span>Vitória da Conquista · Bahia</span></div>
+  </div>
+</footer>
+
+<a class="wa-float" data-wa="orcamento" href="https://api.whatsapp.com/send/?phone=5577988671946&amp;text=Ol%C3%A1!%20Gostaria%20de%20solicitar%20um%20or%C3%A7amento%2C%20por%20favor." target="_blank" rel="noopener" aria-label="Chamar no WhatsApp: (77) 98867-1946">
+  <span class="pulse" aria-hidden="true"></span>
+  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round" aria-hidden="true"><path d="M12 3a9 9 0 0 0-7.7 13.6L3 21l4.5-1.2A9 9 0 1 0 12 3z"/><path d="M9 8.5c0 3.6 2.9 6.5 6.5 6.5l.9-1.6-2-1-1 1a4 4 0 0 1-2.3-2.3l1-1-1-2z" stroke-width="1.3"/></svg>
+  <span class="lbl">WhatsApp</span>
+</a>
+<div id="cursor" aria-hidden="true"></div>
+
+<script src="https://cdn.jsdelivr.net/npm/three@0.147.0/build/three.min.js" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+<script src="app.js" defer></script>
+</body>
+</html>
